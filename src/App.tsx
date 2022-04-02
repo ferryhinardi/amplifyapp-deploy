@@ -1,8 +1,15 @@
 import React from 'react';
-import './App.css';
+import { Router, Outlet } from 'react-location';
+import Header from './components/Header/Header';
+import { routes, location } from './router';
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <Router routes={routes} location={location}>
+      <Header />
+      <Outlet /> {/* Start rendering router matches */}
+    </Router>
+  );
 }
 
 export default App;
